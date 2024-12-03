@@ -18,6 +18,7 @@ To enter the docker container, just run the command listed on `enter_docker.md`
 
 To build, run:
  - `make build-arch`
+
 Note: "arch" is the architecture you want and it needs to be one of the supported architectures. And you want to run the command in the docker container. (if not it will cause errors)
 
 ## How to enter:
