@@ -14,7 +14,11 @@ To make the docker container, you need to run this command:
 
 Note: "os-name" should be your name of choice for the container.
 
-To enter the docker container, just run the command listed on `enter_docker.md`
+To enter the docker container:
+ - Linux or MacOS: `docker run --rm -it -v "$(pwd)":/root/env myos-buildenv`
+ - Windows (CMD): `docker run --rm -it -v "%cd%":/root/env myos-buildenv`
+ - Windows (PowerShell): `docker run --rm -it -v "${pwd}:/root/env" myos-buildenv`
+ - Please use the linux command if you are using `WSL`, `msys2` or `git bash`
 
 To build, run:
  - `make build-arch`
