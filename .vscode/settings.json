@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "ssfn.h": "c",
+        "stdio.h": "c"
+    }
+}
