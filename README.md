@@ -7,20 +7,20 @@ Note: this kernel is not supposed to be linux compatible, just alike the linux k
 
 ## How to build:
 
-To build, you need to have docker and qemu
+To build, you need to have docker and qemu.
 
 To make the docker container, you need to run this command:
-    docker build buildenv -t os-name
+ - `docker build buildenv -t os-name`
 
 Note: "os-name" should be your name of choice for the container.
 
-To enter the docker container, just run the command listed on   enter_docker.md
+To enter the docker container, just run the command listed on `enter_docker.md`
 
 To build, run:
-    make build-arch
-Note: "arch" is the architecture you want and it needs to be one of the supported architectures and you want to run the command in the docker container (if not it will cause errors)
+ - `make build-arch`
+Note: "arch" is the architecture you want and it needs to be one of the supported architectures. And you want to run the command in the docker container. (if not it will cause errors)
 
 ## How to enter:
 
 To enter, you just need to execute this command (While not on the docker container): 
-    qemu-system-x86_64 -cdrom dist/x86_64/BSOS.iso
+ - `qemu-system-x86_64 -cdrom dist/x86_64/BSOS.iso`
