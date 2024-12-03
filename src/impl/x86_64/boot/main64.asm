@@ -1,5 +1,6 @@
 global long_mode_start
 extern main
+extern print_clear
 
 section .text
 bits 64
@@ -11,6 +12,8 @@ long_mode_start:
     mov es, ax
     mov fs, ax
     mov gs, ax
+
+    call print_clear
 
 	call main
     hlt
