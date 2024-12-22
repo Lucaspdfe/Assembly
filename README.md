@@ -7,7 +7,11 @@ Note: this kernel is not supposed to be linux compatible, just alike the linux k
 
 ## How to build:
 
-To build, you need to have docker and qemu.
+To build, you need to have docker and qemu by running these commands (if you do not have them installed):
+
+ - For Debian/Ubuntu: `sudo apt install qemu-system` (i do not know how to install docker)
+ - For Arch: `sudo pacman -S docker qemu`
+ - For Windows: `winget install --id=SoftwareFreedomConservancy.QEMU  -e` and `winget install --id=Docker.DockerDesktop  -e`
 
 To make the docker container, you need to run this command:
  - `docker build buildenv -t os-name`
@@ -15,9 +19,9 @@ To make the docker container, you need to run this command:
 Note: "os-name" should be your name of choice for the container.
 
 To enter the docker container:
- - Linux or MacOS: `docker run --rm -it -v "$(pwd)":/root/env myos-buildenv`
- - Windows (CMD): `docker run --rm -it -v "%cd%":/root/env myos-buildenv`
- - Windows (PowerShell): `docker run --rm -it -v "${pwd}:/root/env" myos-buildenv`
+ - Linux or MacOS: `docker run --rm -it -v "$(pwd)":/root/env os-name`
+ - Windows (CMD): `docker run --rm -it -v "%cd%":/root/env os-name`
+ - Windows (PowerShell): `docker run --rm -it -v "${pwd}:/root/env" os-name`
  - Please use the linux command if you are using `WSL`, `msys2` or `git bash`
 
 To build, run:
@@ -25,7 +29,7 @@ To build, run:
 
 Note: "arch" is the architecture you want and it needs to be one of the supported architectures. And you want to run the command in the docker container. (if not it will cause errors)
 
-## How to enter:
+## How to run:
 
-To enter, you just need to execute this command (While not on the docker container): 
+To run, you could use a computer and a pendrive/cd-rom, or, you just need to execute this command (While not on the docker container): 
  - `qemu-system-x86_64 -cdrom dist/x86_64/BSOS.iso`
