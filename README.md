@@ -1,13 +1,17 @@
 # BSOS Project
 
 Hi, i was not expecting anyone here but okay?
-This is my project, i'm just making this for fun. (Forked from: https://github.com/davidcallanan/os-series)
+This is my project, i'm just making this for fun. (Base from: https://github.com/davidcallanan/os-series)
 There's nothing else to say, just that i'm planning to do a linux-like kernel with networking capabilities.
 Note: this kernel is not supposed to be linux compatible, just alike the linux kernel. (but maybe i will do a syscall-only compatible version.)
 
 ## How to build:
 
-To build, you need to have docker and qemu.
+To build, you need to have docker and qemu by running these commands (if you do not have them installed):
+
+ - For Debian/Ubuntu: `sudo apt install qemu-system` (i do not know how to install docker)
+ - For Arch: `sudo pacman -S docker qemu`
+ - For Windows: `winget install --id=SoftwareFreedomConservancy.QEMU  -e` and `winget install --id=Docker.DockerDesktop  -e`
 
 To make the docker container, you need to run this command:
  - `docker build buildenv -t os-name`
@@ -25,7 +29,7 @@ To build, run:
 
 Note: "arch" is the architecture you want and it needs to be one of the supported architectures. And you want to run the command in the docker container. (if not it will cause errors)
 
-## How to enter:
+## How to run:
 
-To enter, you just need to execute this command (While not on the docker container): 
+To run, you could use a computer and a pendrive/cd-rom, or, you just need to execute this command (While not on the docker container): 
  - `qemu-system-x86_64 -cdrom dist/x86_64/BSOS.iso`
